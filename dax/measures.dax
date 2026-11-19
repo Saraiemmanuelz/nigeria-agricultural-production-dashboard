@@ -1,0 +1,77 @@
+// ============================================================
+// Nigeria Agricultural Production Dashboard: DAX measures
+// Model: Fact_Production (Year, Item_ID, Area_Harvested, Production, Yield,
+//        Production_Level, Period)
+//        Dim_Item (Item_ID, Item, Crop_Category, Is_Aggregate)
+//        Dim_Year (Year, Decade)
+// All measures exclude FAO aggregate rows (Is_Aggregate = "No") so that
+// totals are not double-counted.
+// ============================================================
+
+// ---------- Calculated column (Dim_Item) ----------
+Is Staple = IF(Dim_Item[Crop_Category] IN {"Cereals", "Roots & Tubers"}, "Staple", "Non-staple")
+
+// ---------- Core totals ----------
+Total Production = CALCULATE(SUM(Fact_Production[Production]), Dim_Item[Is_Aggregate] = "No")
+
+Total Area Harvested = CALCULATE(SUM(Fact_Production[Area_Harvested]), Dim_Item[Is_Aggregate] = "No")
+
+Avg Yield kg per ha = CALCULATE(AVERAGE(Fact_Production[Yield]), Dim_Item[Is_Aggregate] = "No")
+
+Max Yield kg per ha = CALCULATE(MAX(Fact_Production[Yield]), Dim_Item[Is_Aggregate] = "No")
+
+Crop Count = CALCULATE(DISTINCTCOUNT(Fact_Production[Item_ID]), Dim_Item[Is_Aggregate] = "No")
+
+Avg Production per Item = DIVIDE([Total Production], [Crop Count])
+
+Crop Production per Hectare =
+DIVIDE(CALCULATE([Total Production], Fact_Production[Area_Harvested] > 0), [Total Area Harvested])
+
+// ---------- Time intelligence ----------
+Production LY =
+VAR y = MAX(Dim_Year[Year])
+RETURN CALCULATE([Total Production], FILTER(ALL(Dim_Year), Dim_Year[Year] = y - 1))
+
+YoY Growth % = DIVIDE([Total Production] - [Production LY], [Production LY])
+
+Cumulative Production =
+CALCULATE([Total Production], FILTER(ALL(Dim_Year), Dim_Year[Year] <= MAX(Dim_Year[Year])))
+
+Recent Production 2020 to 2024 = CALCULATE([Total Production], Dim_Year[Year] >= 2020)
+
+Avg Annual Production = DIVIDE([Total Production], DISTINCTCOUNT(Fact_Production[Year]))
+
+Peak Year =
+VAR t = ADDCOLUMNS(VALUES(Fact_Production[Year]), "Prod", [Total Production])
+RETURN MAXX(TOPN(1, t, [Prod], DESC), Fact_Production[Year])
+
+Production CAGR 2000 to 2024 =
+VAR p0 = CALCULATE([Total Production], Fact_Production[Year] = 2000)
+VAR p1 = CALCULATE([Total Production], Fact_Production[Year] = 2024)
+RETURN IF(p0 > 0 && p1 > 0, POWER(DIVIDE(p1, p0), 1 / 24) - 1)
+
+// ---------- Shares and rankings ----------
+Production Share % = DIVIDE([Total Production], CALCULATE([Total Production], ALL(Dim_Item)))
+
+Production Rank = RANKX(ALL(Dim_Item[Item]), [Total Production], , DESC, Dense)
+
+Cassava Production = CALCULATE([Total Production], Dim_Item[Item] = "Cassava, fresh")
+
+Staple Production = CALCULATE([Total Production], Dim_Item[Crop_Category] IN {"Cereals", "Roots & Tubers"})
+
+Staple Share % = DIVIDE([Staple Production], [Total Production])
+
+Roots Tubers Share % =
+DIVIDE(CALCULATE([Total Production], Dim_Item[Crop_Category] = "Roots & Tubers"), [Total Production])
+
+High Production Records =
+CALCULATE(COUNTROWS(Fact_Production), Fact_Production[Production_Level] = "High Production", Dim_Item[Is_Aggregate] = "No")
+
+// ---------- Crop Performance page ----------
+Top Crop = MAXX(TOPN(1, VALUES(Dim_Item[Item]), [Total Production]), Dim_Item[Item])
+
+Top Crop Share % = DIVIDE(MAXX(VALUES(Dim_Item[Item]), [Total Production]), [Total Production])
+
+Cereal Avg Yield = CALCULATE([Avg Yield kg per ha], Dim_Item[Crop_Category] = "Cereals")
+
+Roots Tubers Avg Yield = CALCULATE([Avg Yield kg per ha], Dim_Item[Crop_Category] = "Roots & Tubers")

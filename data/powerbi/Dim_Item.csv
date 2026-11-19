@@ -1,0 +1,109 @@
+Item_ID,Item,Crop_Category,Is_Aggregate
+1,Bananas,Fruits,No
+2,"Beef and Buffalo Meat, primary",Meat & Livestock Products,No
+3,"Beer of barley, malted",Processed Products,No
+4,Butter and Ghee,Processed Products,No
+5,Butter of cow milk,Processed Products,No
+6,"Buttermilk, dry",Processed Products,No
+7,Carrots and turnips,Roots & Tubers,No
+8,"Cashew nuts, in shell",Oilseeds & Nuts,No
+9,"Cassava, fresh",Roots & Tubers,No
+10,"Cattle fat, unrendered",Meat & Livestock Products,No
+11,"Cereals, primary",Aggregate (FAO total),Yes
+12,Cheese (All Kinds),Processed Products,No
+13,Cheese from skimmed cow milk,Processed Products,No
+14,"Chillies and peppers, dry (Capsicum spp., Pimenta spp.), raw",Vegetables,No
+15,"Chillies and peppers, green (Capsicum spp. and Pimenta spp.)",Vegetables,No
+16,"Citrus Fruit, Total",Aggregate (FAO total),Yes
+17,Cocoa beans,Cash & Industrial Crops,No
+18,Coconut oil,Processed Products,No
+19,"Coconuts, in shell",Oilseeds & Nuts,No
+20,"Coffee, green",Cash & Industrial Crops,No
+21,"Cotton lint, ginned",Processed Products,No
+22,Cotton seed,Processed Products,No
+23,Cottonseed oil,Processed Products,No
+24,"Cow peas, dry",Pulses,No
+25,"Edible offal of cattle, fresh, chilled or frozen",Meat & Livestock Products,No
+26,"Edible offal of goat, fresh, chilled or frozen",Meat & Livestock Products,No
+27,"Edible offal of pigs, fresh, chilled or frozen",Meat & Livestock Products,No
+28,"Edible offal of sheep, fresh, chilled or frozen",Meat & Livestock Products,No
+29,Eggs Primary,Aggregate (FAO total),Yes
+30,Fat of pigs,Meat & Livestock Products,No
+31,"Fibre Crops, Fibre Equivalent",Aggregate (FAO total),Yes
+32,Fonio,Cereals,No
+33,Fruit Primary,Aggregate (FAO total),Yes
+34,"Game meat, fresh, chilled or frozen",Meat & Livestock Products,No
+35,"Ginger, raw",Cash & Industrial Crops,No
+36,"Goat fat, unrendered",Meat & Livestock Products,No
+37,Green corn (maize),Cereals,No
+38,Green garlic,Vegetables,No
+39,"Green tea (not fermented), black tea (fermented) and partly fermented tea, in immediate packings of a content not exceeding 3 kg",Processed Products,No
+40,Groundnut oil,Processed Products,No
+41,"Groundnuts, excluding shelled",Oilseeds & Nuts,No
+42,"Hen eggs in shell, fresh",Dairy & Eggs,No
+43,Karite nuts (sheanuts),Oilseeds & Nuts,No
+44,"Kenaf, and other textile bast fibres, raw or retted",Cash & Industrial Crops,No
+45,Kola nuts,Oilseeds & Nuts,No
+46,Maize (corn),Cereals,No
+47,"Mangoes, guavas and mangosteens",Fruits,No
+48,"Meat of cattle with the bone, fresh or chilled",Meat & Livestock Products,No
+49,"Meat of chickens, fresh or chilled",Meat & Livestock Products,No
+50,"Meat of goat, fresh or chilled",Meat & Livestock Products,No
+51,"Meat of pig with the bone, fresh or chilled",Meat & Livestock Products,No
+52,"Meat of sheep, fresh or chilled",Meat & Livestock Products,No
+53,"Meat, Poultry",Aggregate (FAO total),Yes
+54,"Meat, Total",Aggregate (FAO total),Yes
+55,Melonseed,Oilseeds & Nuts,No
+56,"Milk, Total",Aggregate (FAO total),Yes
+57,Millet,Cereals,No
+58,Molasses,Processed Products,No
+59,Natural rubber in primary forms,Cash & Industrial Crops,No
+60,Oil of palm kernel,Processed Products,No
+61,Oil of sesame seed,Processed Products,No
+62,Oil palm fruit,Oilseeds & Nuts,No
+63,"Oilcrops, Cake Equivalent",Aggregate (FAO total),Yes
+64,"Oilcrops, Oil Equivalent",Aggregate (FAO total),Yes
+65,Okra,Vegetables,No
+66,"Onions and shallots, dry (excluding dehydrated)",Vegetables,No
+67,"Onions and shallots, green",Vegetables,No
+68,"Other citrus fruit, n.e.c.",Fruits,No
+69,"Other fibre crops, raw, n.e.c.",Cash & Industrial Crops,No
+70,"Other fruits, n.e.c.",Fruits,No
+71,"Other nuts (excluding wild edible nuts and groundnuts), in shell, n.e.c.",Oilseeds & Nuts,No
+72,"Other oil seeds, n.e.c.",Oilseeds & Nuts,No
+73,Other pulses n.e.c.,Pulses,No
+74,"Other stimulant, spice and aromatic crops, n.e.c.",Cash & Industrial Crops,No
+75,"Other vegetables, fresh n.e.c.",Vegetables,No
+76,Palm kernels,Oilseeds & Nuts,No
+77,Palm oil,Processed Products,No
+78,Papayas,Fruits,No
+79,Pineapples,Fruits,No
+80,Plantains and cooking bananas,Fruits,No
+81,Potatoes,Roots & Tubers,No
+82,"Pulses, Total",Aggregate (FAO total),Yes
+83,Raw cane or beet sugar (centrifugal only),Processed Products,No
+84,Raw hides and skins of cattle,Meat & Livestock Products,No
+85,Raw hides and skins of goats or kids,Meat & Livestock Products,No
+86,Raw hides and skins of sheep or lambs,Meat & Livestock Products,No
+87,Raw milk of cattle,Dairy & Eggs,No
+88,Rice,Cereals,No
+89,"Roots and Tubers, Total",Aggregate (FAO total),Yes
+90,"Seed cotton, unginned",Cash & Industrial Crops,No
+91,Sesame seed,Oilseeds & Nuts,No
+92,Sheep and Goat Meat,Aggregate (FAO total),Yes
+93,"Sheep fat, unrendered",Meat & Livestock Products,No
+94,"Skim Milk & Buttermilk, Dry",Processed Products,No
+95,Skim milk of cows,Processed Products,No
+96,Sorghum,Cereals,No
+97,Soya bean oil,Processed Products,No
+98,Soya beans,Oilseeds & Nuts,No
+99,Sugar Crops Primary,Aggregate (FAO total),Yes
+100,Sugar cane,Cash & Industrial Crops,No
+101,Sweet potatoes,Roots & Tubers,No
+102,Taro,Roots & Tubers,No
+103,Tomatoes,Vegetables,No
+104,"Treenuts, Total",Aggregate (FAO total),Yes
+105,Unmanufactured tobacco,Cash & Industrial Crops,No
+106,Vegetables Primary,Aggregate (FAO total),Yes
+107,Wheat,Cereals,No
+108,Yams,Roots & Tubers,No
